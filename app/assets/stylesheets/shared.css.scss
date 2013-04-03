@@ -213,6 +213,7 @@ aside#main-content {
   box-sizing: border-box;
   position:relative;
   z-index:2;
+  padding-bottom:100%;
 }
 
 aside.post-type-author a.avatar {
@@ -707,11 +708,11 @@ div.block > h2 a:hover {
 }
 
 ul#category-list li {
-  width:50%;
+  width:100%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding:2px;
+  padding:2px 0;
 }
 
 ul#category-list li a {
@@ -1565,7 +1566,7 @@ aside#main-content {
   width:70%;
 }
 
-ul#category-list li, div.block#main-nav ul li {
+div.block#main-nav ul li {
   width:100%;
 }
 
@@ -1589,6 +1590,7 @@ div.block#main-nav {
 
 section#main-sidebar h2 {
   font-size:16px;
+  letter-spacing: 2px;
 }
 
 div.block > h2 a:before {

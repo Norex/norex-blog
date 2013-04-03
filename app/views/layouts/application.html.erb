@@ -7,13 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div id="super-container">
-  <%= render 'shared/sidebar' %>
-  <aside id="main-content">
-    <%= yield %>
-  </aside>
-</div>
-
+  <div id="super-container">
+    <%= render 'shared/sidebar' %>
+    <aside id="main-content">
+      <%= yield %>
+    </aside>
+  </div>
 </body>
 </html>

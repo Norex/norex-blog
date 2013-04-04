@@ -6,9 +6,8 @@ feature 'Posts page' do
     expect(page).to have_content('No posts are available')
   end
 
-
   scenario 'on individual posts page' do
-    user = FactoryGirl.create(:user, blog_name: "Test User") 
+    user = FactoryGirl.create(:user, blog_name: "Test User", description: 'Test user description') 
     tumble = user.tumbles.create(title: 'Test Post', content: 'Test post content')
 
     visit tumble_path(tumble)
@@ -18,6 +17,7 @@ feature 'Posts page' do
 
     expect(page).to have_content(user.blog_name)
     expect(page).to have_selector('#author-vcard h1', text: user.blog_name)
+    expect(page).to have_selector('#author-vcard h3', text: user.description)
 
     expect(page).to have_selector('ul.share')
     expect(page).to have_selector('ul.tags')

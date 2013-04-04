@@ -37,7 +37,7 @@ describe Tumble do
 
   describe 'user associations' do
     before(:each) do
-      @tumble = @user.tumbles.create(@attr);
+      @tumble = @user.tumbles.create(@attr)
     end
 
     it 'should have a user attribute' do

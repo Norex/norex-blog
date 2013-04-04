@@ -281,21 +281,17 @@ a.post-icon {
   margin:0 0 0 10px;
 }
 
-.text .post-icon span:before {
-  content:"&";
-}
-
-.video .post-icon span:before {
+article.video .post-icon span:before {
   content:"q";
 }
 
-.photo .post-icon span:before {
-  content:"D";
+article.text .post-icon span:before {
+  content:"&";
 }
 
-.tweet .post-icon span:before {
-  content:"l";
-};
+article.photo .post-icon span:before {
+  content:"D";
+}
 
 a.post-icon:hover span {
   color:#666;
@@ -514,7 +510,7 @@ div.block#main-nav {
   transition:all 0.3s ease;
 }
 
-div.block#main-nav:target {
+div.block#main-nav.open {
   margin-top:-40px!important;
   -webkit-transition:all 0.3s ease; 
   -moz-transition:all 0.3s ease;
@@ -1168,7 +1164,7 @@ div#type-knob a.centerbuttonon span.light {
   content:"q";
 }
 
-.circles li a span.blogs:before {
+.circles li a span.text:before {
   content:"&";
 }
 

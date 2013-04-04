@@ -1,4 +1,4 @@
-<article class="pink blog">
+<article class="pink <%= tumble.content_type %>">
   <aside class="post-type-author">
     <ul>
       <li><a class="post-icon" href="#"><span class="entypo">&nbsp;</span></a></li>
@@ -8,14 +8,18 @@
   </aside>
   <section>
     <header>
-      <h1><a href="#">Responsive Design Considerations</a></h1>
-      <h6>by <a href="#">Justin Bellefontaine</a> | October 30, 2012 </h6>
+      <h1><%= link_to tumble.title, tumble_path(tumble) %></h1>
+      <h6>by <a href="#"><%= tumble.user.blog_name %></a> | <%= format_date(tumble.date, '%B %d, %Y') %></h6>
     </header>
-    <p>Responsive design is becoming more and more popular in the web industry. The reason for this is that nearly 60% of all web traffic is now done through mobile devices such as smart phones, tablets and e-readers.</p>
+    <% if tumble.content_type == 'photo' %>
+      <p><%= image_tag(YAML::load(tumble.content)[0]["original_size"].url) %>
+    <% else %>
+      <p><%= raw tumble.content %></p>
+    <% end %>
     <ul class="tags">
-      <li><a href="#"><span class="start"><em>&nbsp;</em></span>Design<span class="end"><em>&nbsp;</em></span></a></li>
-      <li><a href="#"><span class="start"><em>&nbsp;</em></span>CSS<span class="end"><em>&nbsp;</em></span></a></li>
-      <li><a href="#"><span class="start"><em>&nbsp;</em></span>Mobile<span class="end"><em>&nbsp;</em></span></a></li>
+      <% tumble.tag_list.each do |tag| %>
+        <li><a href="<%= tag_path(tag) %>"><span class="start"><em>&nbsp;</em></span><%= tag %><span class="end"><em>&nbsp;</em></span></a></li>
+      <% end %>
     </ul>
   </section>
 </article>

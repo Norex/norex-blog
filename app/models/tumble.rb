@@ -86,7 +86,7 @@ class Tumble < ActiveRecord::Base
         # end
         
         #user.tumbles << new_tumble
-        user.save
+        #user.save
       end
     end
   end

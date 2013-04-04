@@ -1,6 +1,11 @@
 NorexBlog::Application.routes.draw do
+  get 'tags/:tag', to: 'tumbles#index', as: :tag
+
+  get 'posts/:id' => 'tumbles#show', :as => :tumble
+
   root :to => 'tumbles#index'
 
+  
   # resources :users
 
 

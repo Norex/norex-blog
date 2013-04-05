@@ -1,0 +1,7 @@
+<% content_for :title, "Search: #{@query}" %>
+
+<% if @tumbles.blank? %>
+  <%= render 'tumbles/tumble_empty' %>
+<% else %>
+  <%= render @tumbles %>
+<% end %>

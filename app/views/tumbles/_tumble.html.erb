@@ -1,11 +1,5 @@
 <article class="pink <%= tumble.content_type %>">
-  <aside class="post-type-author">
-    <ul>
-      <li><a class="post-icon" href="#"><span class="entypo">&nbsp;</span></a></li>
-      <li><span class="arrow left">&nbsp;</span></li>
-      <li><a href="#" class="avatar"><%= image_tag('avatar.jpg', alt: 'Avatar', class: 'avatar') %></a></li>
-    </ul>
-  </aside>
+  <%= render tumble.user %>
   <section>
     <header>
       <h1><%= link_to tumble.title, tumble_path(tumble) %></h1>
@@ -21,5 +15,16 @@
         <li><a href="<%= tag_path(tag) %>"><span class="start"><em>&nbsp;</em></span><%= tag %><span class="end"><em>&nbsp;</em></span></a></li>
       <% end %>
     </ul>
+    <% if in_action(:show) %>
+      <ul class="share">
+        <li><a href="#">Share</a></li>
+        <li><a href="#">Back to Top</a></li>
+      </ul>
+      <%= render partial: 'users/user_full', object: tumble.user, as: :user %>
+      <ul class="pagination">
+        <li><a href="#">« Previous Post</a></li>
+        <li><a href="#">Next Post »</a></li>
+      </ul>
+    <% end %>
   </section>
 </article>

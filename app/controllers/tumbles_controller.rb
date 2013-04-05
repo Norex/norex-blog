@@ -10,4 +10,12 @@ class TumblesController < ApplicationController
   def show
     @tumble = Tumble.where(id: params[:id]).first
   end
+
+  def search
+    @query = params[:query].downcase
+
+    unless @query.blank?
+      @tumbles = Tumble.where('title LIKE ?', "%#{@query}%")
+    end
+  end
 end

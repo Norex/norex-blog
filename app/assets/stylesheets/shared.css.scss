@@ -14,9 +14,9 @@ Base styles: opinionated defaults
 font-family: 'EntypoRegular';
 src: font-url('entypo-webfont.eot');
 src: font-url('entypo-webfont.eot?#iefix') format('embedded-opentype'),
-   font-url('entypo-webfont.woff') format('woff'),
-   font-url('entypo-webfont.ttf') format('truetype'),
-   font-url('entypo-webfont.svg#EntypoRegular') format('svg');
+     font-url('entypo-webfont.woff') format('woff'),
+     font-url('entypo-webfont.ttf') format('truetype'),
+     font-url('entypo-webfont.svg#EntypoRegular') format('svg');
 font-weight: normal;  
 font-style: normal;
 }
@@ -25,9 +25,9 @@ font-style: normal;
 font-family: 'GothamLightRegular';
 src: font-url('gotham-light-webfont.eot');
 src: font-url('gotham-light-webfont.eot?#iefix') format('embedded-opentype'),
-font-url('gotham-light-webfont.woff') format('woff'),
-font-url('gotham-light-webfont.ttf') format('truetype'),
-font-url('gotham-light-webfont.svg#GothamLightRegular') format('svg');
+     font-url('gotham-light-webfont.woff') format('woff'),
+     font-url('gotham-light-webfont.ttf') format('truetype'),
+     font-url('gotham-light-webfont.svg#GothamLightRegular') format('svg');
 font-weight: normal;
 font-style: normal;
 }
@@ -44,7 +44,7 @@ font-style: normal;
 }
 
 * {
-  font-family:'Source Sans Pro', Arial, Helvetica, sans-serif;
+  font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
 html,
@@ -58,15 +58,15 @@ textarea {
 body {
   font-size: 1em;
   line-height: 1.4;
-  background:#fcfcfc image-url('sidebar-bg.jpg') repeat-y;
+  background: #fcfcfc image-url('sidebar-bg.jpg') repeat-y;
 }
 
 body, html {
-  height:100%;
+  height: 100%;
 }
 
 section#main-sidebar, aside#main-content, div#super-container {
-  min-height:100%;
+  min-height: 100%;
 }
 
 /*
@@ -78,13 +78,13 @@ section#main-sidebar, aside#main-content, div#super-container {
 ::-moz-selection {
   background: #eb1e5b;
   text-shadow: none;
-  color:#fff;
+  color: #fff;
 }
 
 ::selection {
   background: #eb1e5b;
   text-shadow: none;
-  color:#fff;
+  color: #fff;
 }
 
 /*
@@ -106,7 +106,7 @@ hr {
 
 img {
   vertical-align: middle;
-  max-width:100%;
+  max-width: 100%;
 }
 
 /*
@@ -128,7 +128,7 @@ textarea {
 }
 
 div.container {
-  padding:20px; 
+  padding: 20px; 
 }
 
 /* ==========================================================================
@@ -138,33 +138,33 @@ Chrome Frame prompt
 .chromeframe {
   background: #222;
   color: #000;
-  position:fixed;
-  width:100%;
-  padding:20px 30px;
-  top:0;
-  font-size:16px;
+  position: fixed;
+  width: 100%;
+  padding: 20px 30px;
+  top: 0;
+  font-size: 16px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  left:0;
-  z-index:1000;
-  line-height:18px;
-  color:#fff;
-  margin:0;
-  text-align:center;
+  left: 0;
+  z-index: 1000;
+  line-height: 18px;
+  color: #fff;
+  margin: 0;
+  text-align: center;
 }
 
 .chromeframe a {
-  color:#fcf000;
-  font-weight:700;
+  color: #fcf000;
+  font-weight: 700;
 }
 
 .chromeframe a:hover {
-  color:#fff!important; 
+  color: #fff!important; 
 }
 
 .chromeframe#cfmsg:target {
-  display:none;
+  display: none;
 }
 
 /* ==========================================================================
@@ -172,7 +172,7 @@ Main site styles prepared by Justin Bellefontaine @ Norex
 ========================================================================== */
 
 div#super-container {
-  float:left;
+  float: left;
 }
 
 /* ==========================================================================
@@ -180,23 +180,23 @@ Global Colors
 ========================================================================== */
 
 .pink h1 a, .pink h1 {
-  color:#eb1e5b;
+  color: #eb1e5b;
 }
 
 .orange h1 a, .orange h1 {
-  color:#f9922d;
+  color: #f9922d;
 }
 
 .blue h1 a, .blue h1 {
-  color:#0082c8;
+  color: #0082c8;
 }
 
 .green h1 a, .green h1 {
-  color:#47aa42;
+  color: #47aa42;
 }
 
 .twitter {
-  color:#33ccff;
+  color: #33ccff;
 }
 
 /* ==========================================================================
@@ -204,43 +204,43 @@ Articles
 ========================================================================== */
 
 aside#main-content {
-  width:72%;
-  float:left;
-  background:transparent image-url('midbar-bg.jpg') repeat-y left top;
-  padding:30px 0;
+  width: 72%;
+  float: left;
+  background: transparent image-url('midbar-bg.jpg') repeat-y left top;
+  padding: 30px 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  position:relative;
-  z-index:2;
-  padding-bottom:100%;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 100%;
 }
 
 aside.post-type-author a.avatar {
-  box-shadow:2px 2px 0 1px #f1f1f1;
-  display:block;
-  overflow:hidden;
-  width:70px;
-  height:70px;
-  margin-left:25px;
+  box-shadow: 2px 2px 0 1px #f1f1f1;
+  display: block;
+  overflow: hidden;
+  width: 70px;
+  height: 70px;
+  margin-left: 25px;
 }
 
 aside.post-type-author a.avatar img {
-  max-width:70px;
+  max-width: 70px;
 }
 
 aside.post-type-author {
-  width:195px;
-  float:left;
-  margin-left:10px;
-  height:130px;
+  width: 195px;
+  float: left;
+  margin-left: 10px;
+  height: 130px;
 }
 
 aside#main-content article {
-  margin-bottom:50px;
-  width:100%;
-  clear:left;
-  float:left;
+  margin-bottom: 50px;
+  width: 100%;
+  clear: left;
+  float: left;
 }
 
 aside#main-content article > section {
@@ -249,61 +249,61 @@ aside#main-content article > section {
   box-sizing: border-box;
   padding: 0 20px;
   width: 72%;
-  float:left;
+  float: left;
 }
 
 aside.post-type-author li {
-  min-width:10px;
+  min-width: 10px;
 }
 
 a.post-icon {
-  display:block;
-  width:43px;
-  height:43px;
-  margin-top:11px;
-  text-align:center;
-  background:transparent image-url('post-type-bg.png') no-repeat;
+  display: block;
+  width: 43px;
+  height: 43px;
+  margin-top: 11px;
+  text-align: center;
+  background: transparent image-url('post-type-bg.png') no-repeat;
 }
 
 .post-icon span {
-  font-size:32px;
-  color:#333;
-  line-height:36px;
-  margin-left:2px;
-  -webkit-transition:all 0.2s ease; 
-  -moz-transition:all 0.2s ease;
-  -ms-transition:all 0.2s ease;
-  -o-transition:all 0.2s ease;
-  transition:all 0.2s ease;
+  font-size: 32px;
+  color: #333;
+  line-height: 36px;
+  margin-left: 2px;
+  -webkit-transition: all 0.2s ease; 
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .post-icon span:before {
-  margin:0 0 0 10px;
+  margin: 0 0 0 10px;
 }
 
 article.video .post-icon span:before {
-  content:"q";
+  content: "q";
 }
 
 article.text .post-icon span:before {
-  content:"&";
+  content: "&";
 }
 
 article.photo .post-icon span:before {
-  content:"D";
+  content: "D";
 }
 
 a.post-icon:hover span {
-  color:#666;
-  -webkit-transition:all 0.2s ease; 
-  -moz-transition:all 0.2s ease;
-  -ms-transition:all 0.2s ease;
-  -o-transition:all 0.2s ease;
-  transition:all 0.2s ease;
+  color: #666;
+  -webkit-transition: all 0.2s ease; 
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 aside.post-type-author li span.arrow {
-  margin:18px 12px 0;
+  margin: 18px 12px 0;
 }
 
 div.article-divider {
@@ -1340,59 +1340,60 @@ blockquote {
 }
 
 .pink section#author-vcard img, .pink section#author-vcard header {
-  border-color:#eb1e5b;
+  border-color: #eb1e5b;
 }
 
 .orange section#author-vcard img, .orange section#author-vcard header {
-  border-color:#f9922d;
+  border-color: #f9922d;
 }
 
 .blue section#author-vcard img, .blue section#author-vcard header {
-  border-color:#0082c8;
+  border-color: #0082c8;
 }
 
 .green section#author-vcard img, .green section#author-vcard header {
-  border-color:#47aa42;
+  border-color: #47aa42;
 }
 
 .entypo {
-  font-family:'EntypoRegular', Arial, Helvetica, sans-serif!important;
-  font-weight:100!important;
+  font-family: 'EntypoRegular', Arial, Helvetica, sans-serif!important;
+  font-weight: 100!important;
 }
 
 .divider {
-  margin:5px 0;
+  margin: 5px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  padding:0;
-  margin:0;
-  color:#515151;
+  padding: 0;
+  margin: 0;
+  color: #515151;
 }
 
 article header h1 {
-  line-height:44px; 
+  line-height: 44px; 
+  word-break: break-all;
 }
 
 h1 {
-  font-size:42px;
-  font-weight:100;
+  font-size: 42px;
+  font-weight: 100;
 }
 
 h1 a {
-  font-weight:100;
+  font-weight: 100;
 }
 
 h6 {
-  font-weight:400;
-  color:#ababab;
-  font-size:18px;
+  font-weight: 400;
+  color: #ababab;
+  font-size: 18px;
 }
 
 p {
-  color:#5c5c5c;
-  font-size:16px;
-  line-height:21px;
+  color: #5c5c5c;
+  font-size: 16px;
+  line-height: 21px;
 }
 
 a {

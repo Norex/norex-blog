@@ -4,4 +4,8 @@ module TumblesHelper
       date.strftime(format)
     end
   end
+
+  def random_colour
+    ['blue', 'orange', 'pink', 'green'].sample
+  end
 end

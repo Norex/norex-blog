@@ -83,5 +83,9 @@ describe Tumble do
     it 'should associate a Tumble with a user' do
       Tumble.first.user.should_not == nil
     end
+
+    after(:all) do
+      Tumble.destroy_all
+    end
   end
 end

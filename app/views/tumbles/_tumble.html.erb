@@ -1,0 +1,30 @@
+<article class="<%= random_colour %> <%= tumble.content_type %>">
+  <%= render tumble.user %>
+  <section>
+    <header>
+      <h1><%= link_to tumble.title, tumble_path(tumble) %></h1>
+      <h6>by <a href="#"><%= tumble.user.blog_name %></a> | <%= format_date(tumble.date, '%B %d, %Y') %></h6>
+    </header>
+    <% if tumble.content_type == 'photo' %>
+      <p><%= image_tag(YAML::load(tumble.content)[0]["original_size"].url) %>
+    <% else %>
+      <p><%= raw tumble.content %></p>
+    <% end %>
+    <ul class="tags">
+      <% tumble.tag_list.each do |tag| %>
+        <li><a href="<%= tag_path(tag) %>"><span class="start"><em>&nbsp;</em></span><%= tag %><span class="end"><em>&nbsp;</em></span></a></li>
+      <% end %>
+    </ul>
+    <% if in_action(:show) %>
+      <ul class="share">
+        <li><a href="#">Share</a></li>
+        <li><a href="#">Back to Top</a></li>
+      </ul>
+      <%= render partial: 'users/user_full', object: tumble.user, as: :user %>
+      <ul class="pagination">
+        <li><a href="#">« Previous Post</a></li>
+        <li><a href="#">Next Post »</a></li>
+      </ul>
+    <% end %>
+  </section>
+</article>

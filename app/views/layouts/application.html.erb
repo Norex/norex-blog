@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Norex Blog</title>
+  <title><%= (yield(:title) + " | " unless yield(:title).blank?).to_s + "Norex Blog" %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div id="super-container">
-  <%= render 'shared/sidebar' %>
-  <aside id="main-content">
-    <%= yield %>
-  </aside>
-</div>
-
+  <div id="super-container">
+    <%= render 'shared/sidebar' %>
+    <%# debug(params) %>
+    <aside id="main-content">
+      <%= yield %>
+    </aside>
+  </div>
 </body>
 </html>

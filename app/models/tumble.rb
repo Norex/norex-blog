@@ -11,7 +11,7 @@ class Tumble < ActiveRecord::Base
     if tags.nil?
       order('date DESC')
     else
-      tagged_with(tags).order('date DESC')
+      tagged_with(tags, any: true).order('date DESC')
     end
   end
 

@@ -3,8 +3,7 @@
   <div class="divider dark">&nbsp;</div>
   <ul id="category-list">
     <% Tumble.tag_counts.each do |tag| %>
-      <li><a href="#" class="active"><%= tag.name %> (<%= tag.count %>) <span class="light">&nbsp;</span></a></li>
-      <li><%= tags_link_for_link(tag.name) %></li>
+      <li><%= tag_link_to(tag.name, tag.count) %></li>
     <% end %>
   </ul>
 </div>

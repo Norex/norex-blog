@@ -5,6 +5,8 @@ gem 'sqlite3'
 gem 'jquery-rails'
 gem 'tumblr-ruby', '~> 0.1.0', :require => 'tumblr'
 gem 'acts-as-taggable-on', '~> 2.3.3'
+gem 'friendly_id', '~> 4.0.9'
+gem 'sanitize', '~> 2.0.3'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

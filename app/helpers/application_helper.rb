@@ -6,7 +6,11 @@ module ApplicationHelper
   def tag_link_to(tag, count)
     current_tags = get_current_tags(tag)
     
+    require 'pp'
+    params[:action] = 'index'
+
     link_to raw("#{tag} (#{count}) <span class='light'>&nbsp;</span>"), params.merge({:"tags" => current_tags.any? ? current_tags : ['none']}), class: (current_tags.include?(tag) ? '' : 'active')   
+    # link_to raw("#{tag} (#{count}) <span class='light'>&nbsp;</span>"), params.merge({:"tags" => current_tags.any? ? current_tags : ['none']}), class: (current_tags.include?(tag) ? '' : 'active')   
   end
 
   def type_link_to(type, type_plural)

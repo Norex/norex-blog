@@ -12,7 +12,8 @@ class TumblesController < ApplicationController
   end
 
   def show
-    @tumble = Tumble.where(id: params[:id]).first
+    puts params[:id]
+    @tumble = Tumble.find(params[:id])
   end
 
   def search

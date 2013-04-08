@@ -859,8 +859,8 @@ ul#author-list h6 {
 
 span.shadow {
   display:block;
-  width:74px;
-  height:75px;
+  width:64px;
+  height:64px;
   border-radius:5px;
   float:left;
   position:absolute;
@@ -1462,6 +1462,27 @@ Helper classes
 .center {
   text-align:center;
 }
+
+[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+[placeholder]:focus::-moz-placeholder {
+  color: transparent;
+}
+[placeholder]:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
+
+
+// [placeholder]:focus::-webkit-input-placeholder {
+//   transition: opacity 0.5s 0.5s ease; 
+//   opacity: 0;
+// }
 
 /*
 * Image replacement

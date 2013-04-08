@@ -8,7 +8,7 @@
     <% if tumble.content_type == 'photo' %>
       <p><%= image_tag(YAML::load(tumble.content)[0]["original_size"].url) %>
     <% else %>
-      <p><%= raw tumble.content %></p>
+      <p class="content-container"><%= raw tumble.content %></p>
     <% end %>
     <ul class="tags">
       <% tumble.tag_list.each do |tag| %>

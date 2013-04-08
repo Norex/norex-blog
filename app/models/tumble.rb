@@ -27,6 +27,15 @@ class Tumble < ActiveRecord::Base
     end
   end
 
+  def self.get_by_users(params)
+    users = params[:users] || nil
+    if users.nil?
+      where('1 = 1')
+    else
+      where(user_id: users)
+    end
+  end
+
   def self.fetch_new
     client = Tumblr::Client.new do |config|
       config.consumer_key = ENV['TUMBLR_CONSUMER_KEY']

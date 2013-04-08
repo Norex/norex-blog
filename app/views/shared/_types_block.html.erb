@@ -1,13 +1,7 @@
 <div class="block types">
   <div id="type-knob">
-    <ul class="circles">
-      <% { photo: :photos, video: :videos, text: :text, misc: :misc }.each do |singular, plural| %>
-        <li><%= type_link_to(singular, plural) %></li>  
-      <% end %>
-      <!-- <li><a href="" title="" class="active" data-shown="true" data-post_type="photo"><span class="entypo photos">&nbsp;</span></a></li>
-      <li><a href="" title="" class="active" data-shown="true" data-post_type="video"><span class="entypo videos">&nbsp;</span></a></li>
-      <li><a href="" title="" class="active" data-shown="true" data-post_type="text"><span class="entypo text">&nbsp;</span></a></li>
-      <li><a href="" title="" class="active" data-shown="true" data-post_type="misc"><span class="entypo misc">&nbsp;</span></a></li> -->
+    <ul id="types-list" class="circles">
+      <%= render 'shared/types_block_links' %>
     </ul>
     <a href="#" id="centerbutton">
       <span class="light">&nbsp;</span>

@@ -1,0 +1,6 @@
+<% out ||= false %>
+<% puts out %>
+<% puts 'yaaa' %>
+<% { photo: :photos, video: :videos, text: :text, misc: :misc }.each do |singular, plural| %>
+  <li><%= type_link_to(singular, plural, out) %></li>  
+<% end %>

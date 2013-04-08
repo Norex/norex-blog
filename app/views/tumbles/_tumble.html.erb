@@ -2,7 +2,7 @@
   <%= render tumble.user %>
   <section>
     <header>
-      <h1><%= link_to tumble.title, tumble_path(tumble) %></h1>
+      <h1><%= link_to strip_tags(tumble.title), tumble_path(tumble) %></h1>
       <h6>by <a href="#"><%= tumble.user.blog_name %></a> | <%= format_date(tumble.date, '%B %d, %Y') %></h6>
     </header>
     <% if tumble.content_type == 'photo' %>

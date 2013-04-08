@@ -1,18 +1,18 @@
 class TumblesController < ApplicationController
   def index
-    #puts Tumble.tag_counts
-    #uts params
-    # if params[:tags]
-      #@tumbles = Tumble.tagged_with(params[:tag]).order('date DESC')
-      @tumbles = Tumble.get_by_tags(params)
-      #puts @tumbles
-    # else
-    #   @tumbles = Tumble.order('date DESC')
-    # end
+    @tumbles = Tumble.get_by_types(params).get_by_tags(params).order('date DESC')
+    require 'pp'
+    pp params
+    pp @tumbles
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
-    @tumble = Tumble.where(id: params[:id]).first
+    @tumble = Tumble.find(params[:id])
   end
 
   def search
@@ -22,17 +22,4 @@ class TumblesController < ApplicationController
       @tumbles = Tumble.where('title LIKE ?', "%#{@query}%")
     end
   end
-
-  private
-  # def get_by_tags
-  #   tags = params[:tags] || nil
-  #   if tags.empty?
-  #     # Tumbles.all
-  #     # Display no posts.
-  #   elsif tags.nil?
-  #     # Display all posts
-  #   else
-  #     Tumble.tagged_with(tags)
-  #   end
-  # end
 end

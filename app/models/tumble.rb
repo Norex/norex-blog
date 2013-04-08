@@ -1,17 +1,29 @@
 class Tumble < ActiveRecord::Base
+  extend FriendlyId
+
   attr_accessible :content, :content_type, :date, :title, :tumblr_id, :url, :tag_list
 
   belongs_to :user
 
   acts_as_taggable
+  friendly_id :title, use: :slugged
 
   def self.get_by_tags(params)
     tags = params[:tags] || nil
 
     if tags.nil?
-      order('date DESC')
+      where('1 = 1')
     else
-      tagged_with(tags, any: true).order('date DESC')
+      tagged_with(tags, any: true)
+    end
+  end
+
+  def self.get_by_types(params)
+    types = params[:types] || nil
+    if types.nil?
+      where('1 = 1')
+    else
+      where(content_type: types)
     end
   end
 
@@ -53,17 +65,17 @@ class Tumble < ActiveRecord::Base
 
     case tumble.type
     when 'text', 'chat'
-      attributes.merge!({ title: tumble.title, content: tumble.body })
+      attributes.merge!({ title: Sanitize.clean(tumble.title), content: tumble.body })
     when 'quote'
-      attributes.merge!({ title: tumble.source, content: tumble.text })
+      attributes.merge!({ title: Sanitize.clean(tumble.source), content: tumble.text })
     when 'link'
-      attributes.merge!({ title: tumble.title, content: tumble.description, url: tumble.url })
+      attributes.merge!({ title: Sanitize.clean(tumble.title), content: tumble.description, url: tumble.url })
     when 'video'
-      attributes.merge!({ title: tumble.caption, content: tumble.player.last.embed_code })
+      attributes.merge!({ title: Sanitize.clean(tumble.caption), content: tumble.player.last.embed_code })
     when 'audio'
-      attributes.merge!({ title: tumble.caption, content: tumble.player })
+      attributes.merge!({ title: Sanitize.clean(tumble.caption), content: tumble.player })
     when 'photo'
-      attributes.merge!({ title: tumble.caption, content: tumble.photos.to_yaml })
+      attributes.merge!({ title: Sanitize.clean(tumble.caption), content: tumble.photos.to_yaml })
     else
       attributes = nil
     end

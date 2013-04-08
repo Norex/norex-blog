@@ -11,7 +11,10 @@
     <%= render 'shared/sidebar' %>
     <%# debug(params) %>
     <aside id="main-content">
-      <%= yield %>
+      <%= render 'shared/loader' %>
+      <div id="posts">
+        <%= yield %>
+      </div>
     </aside>
   </div>
 </body>

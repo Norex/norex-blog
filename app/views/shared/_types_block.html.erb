@@ -1,9 +1,7 @@
 <div class="block types">
   <div id="type-knob">
-    <ul class="circles">
-      <% { photo: :photos, video: :videos, text: :text, misc: :misc }.each do |singular, plural| %>
-        <li><%= type_link_to(singular, plural) %></li>  
-      <% end %>
+    <ul id="types-list" class="circles">
+      <%= render 'shared/types_block_links' %>
     </ul>
     <a href="#" id="centerbutton">
       <span class="light">&nbsp;</span>

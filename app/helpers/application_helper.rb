@@ -9,15 +9,41 @@ module ApplicationHelper
     require 'pp'
     params[:action] = 'index'
 
-    link_to raw("#{tag} (#{count}) <span class='light'>&nbsp;</span>"), params.merge({:"tags" => current_tags.any? ? current_tags : ['none']}), class: (current_tags.include?(tag) ? '' : 'active')   
-    # link_to raw("#{tag} (#{count}) <span class='light'>&nbsp;</span>"), params.merge({:"tags" => current_tags.any? ? current_tags : ['none']}), class: (current_tags.include?(tag) ? '' : 'active')   
+    link_to raw("#{tag} (#{count}) <span class='light'>&nbsp;</span>"), params.merge({:"tags" => current_tags.any? ? current_tags : ['none']}), class: (current_tags.include?(tag) ? '' : 'active')
   end
 
-  def type_link_to(type, type_plural)
+  def type_link_to(type, type_plural, out)
     type = type.to_s
     current_types = get_current_types(type)
 
-    link_to raw("<span class='entypo #{type_plural.to_s}'>&nbsp;</span>"), params.merge({:"types" => current_types.any? ? current_types : ['none']}), class: (current_types.include?(type) ? '' : 'active')
+    link_to raw("<span class='entypo #{type_plural.to_s}'>&nbsp;</span>"), params.merge({:"types" => current_types.any? ? current_types : ['none']}), class: type_link_to_classes(!current_types.include?(type), out)
+  end
+
+  def type_link_to_classes(active, out)
+    classes = []
+    classes << 'active' if active
+    classes << 'out' if out
+
+    classes.join ' '
+  end
+
+  def get_current_tags(tag)
+    current_tags = params[:tags].try(:dup) || nil
+    all_tags = Tumble.tag_counts.map { |tag| tag.name }
+
+    if current_tags.nil?
+      current_tags = all_tags.reject { |t| t == tag } 
+    else
+      if current_tags.include? tag
+        current_tags = current_tags.reject { |t| t == tag } 
+      else
+        current_tags = (current_tags << tag)
+      end
+
+      current_tags = current_tags.reject { |t| t == 'none' } 
+    end
+
+    current_tags
   end
 
   def get_current_tags(tag)

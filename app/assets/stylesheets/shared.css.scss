@@ -173,6 +173,7 @@ Main site styles prepared by Justin Bellefontaine @ Norex
 
 div#super-container {
   float: left;
+  width: 100%;
 }
 
 /* ==========================================================================
@@ -1308,6 +1309,13 @@ pre {
   background:#333;
 }
 
+.post-loader {
+  text-align: center;
+  img {
+    margin-left: 128px;
+  } 
+}
+
 /* ==========================================================================
 Typography
 ========================================================================== */
@@ -1697,6 +1705,12 @@ ul.share li a:hover {
 section#author-vcard p {
   width:100%;
   padding:0;
+}
+
+.post-loader {
+  img {
+    margin-left: 0;
+  } 
 }
 
 }

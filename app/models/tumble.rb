@@ -12,9 +12,18 @@ class Tumble < ActiveRecord::Base
     tags = params[:tags] || nil
 
     if tags.nil?
-      order('date DESC')
+      where('1 = 1')
     else
-      tagged_with(tags, any: true).order('date DESC')
+      tagged_with(tags, any: true)
+    end
+  end
+
+  def self.get_by_types(params)
+    types = params[:types] || nil
+    if types.nil?
+      where('1 = 1')
+    else
+      where(content_type: types)
     end
   end
 

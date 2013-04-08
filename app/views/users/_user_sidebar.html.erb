@@ -1,0 +1,7 @@
+<li class="active">
+  <a href="#" class="avatar"><span class="shadow">&nbsp;</span><%= image_tag user.photo, alt: user.blog_name, class: 'avatar' %></a>
+  <h5><%= first_name(user.blog_name) %></h5>
+  <h6><%= user.description %></h6>
+  <%= user_link_to(user.id) %>
+  <!-- <a href="#" class="switch"><span class="on">&nbsp;</span></a> -->
+</li>

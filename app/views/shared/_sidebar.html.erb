@@ -21,7 +21,10 @@
         </p>
       <% end %>
     </div>
-    <%= render 'shared/types_block' %>
-    <%= render 'shared/tags_block' %>
+    <% if params[:action] == 'index' %>
+      <%= render 'shared/types_block' %>
+      <%= render 'shared/tags_block' %>
+      <%= render 'users/sidebar_block' %>
+    <% end %>
   </div>
 </section>

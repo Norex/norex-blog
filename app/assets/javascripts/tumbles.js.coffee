@@ -10,10 +10,15 @@ $ ->
     $('#main-nav').toggleClass 'open'
 
   $(document).on 'click', '#category-list a', (e) ->
-    $.getScript($(this).attr('href'))
+    $('#post-loader').removeClass 'hidden'
+    $('#posts').html ''
+    $.getScript $(this).attr('href')
+   
     false
 
   $(document).on 'click', '#types-list a', (e) ->
-    $.getScript($(this).attr('href'))
-    #console.log('type clicked')
+    $('#post-loader').removeClass 'hidden'
+    $('#posts').html ''
+    $.getScript $(this).attr('href')
+
     false

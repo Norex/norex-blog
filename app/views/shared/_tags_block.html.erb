@@ -1,8 +1,10 @@
+<%#= @tag_list ||= Tumble.tag_counts %>
 <div id="tags-block" class="block categories">
-  <h2>Tags <a href="#">all</a></h2>
+  <h2>Tags</h2>
   <div class="divider dark">&nbsp;</div>
   <ul id="category-list">
     <% Tumble.tag_counts.each do |tag| %>
+    <% puts tag %>
       <li><%= tag_link_to(tag.name, tag.count) %></li>
     <% end %>
   </ul>

@@ -1,9 +1,6 @@
 class TumblesController < ApplicationController
   def index
     @tumbles = Tumble.get_by_types(params).get_by_tags(params).order('date DESC')
-    require 'pp'
-    pp params
-    pp @tumbles
 
     respond_to do |format|
       format.html

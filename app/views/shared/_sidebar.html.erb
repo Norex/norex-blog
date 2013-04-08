@@ -15,7 +15,11 @@
       <a href="/"><%= image_tag('logo.png', alt: 'The Society of Online Engineers') %></a>
     </div>
     <div class="block search">
-      <input name="" type="text">
+      <%= form_tag search_path, :method => 'get' do %>
+        <p>
+          <%= text_field_tag 'query', nil, :placeholder => 'Search...' %>
+        </p>
+      <% end %>
     </div>
     <%= render 'shared/types_block' %>
     <%= render 'shared/tags_block' %>

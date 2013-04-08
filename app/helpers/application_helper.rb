@@ -5,18 +5,17 @@ module ApplicationHelper
 
   def tag_link_to(tag, count)
     current_tags = get_current_tags(tag)
-    
-    require 'pp'
     params[:action] = 'index'
-
-    link_to raw("#{tag} (#{count}) <span class='light'>&nbsp;</span>"), params.merge({:"tags" => current_tags.any? ? current_tags : ['none']}), class: (current_tags.include?(tag) ? '' : 'active')
+    
+    link_to raw("#{tag} (#{count}) <span class='light'>&nbsp;</span>"), params.except(:utf8, :query).merge({:"tags" => current_tags.any? ? current_tags : ['none']}), class: (current_tags.include?(tag) ? '' : 'active')
   end
 
   def type_link_to(type, type_plural, out)
     type = type.to_s
     current_types = get_current_types(type)
+    params[:action] = 'index'
 
-    link_to raw("<span class='entypo #{type_plural.to_s}'>&nbsp;</span>"), params.merge({:"types" => current_types.any? ? current_types : ['none']}), class: type_link_to_classes(!current_types.include?(type), out)
+    link_to raw("<span class='entypo #{type_plural.to_s}'>&nbsp;</span>"), params.except(:utf8, :query).merge({:"types" => current_types.any? ? current_types : ['none']}), class: type_link_to_classes(!current_types.include?(type), out)
   end
 
   def type_link_to_classes(active, out)

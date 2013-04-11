@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'tumblr-ruby', '~> 0.1.0', :require => 'tumblr'
 gem 'acts-as-taggable-on', '~> 2.3.3'
@@ -17,6 +16,7 @@ end
 
 group :development do
   gem 'envious', '~> 0.3.0'
+  gem 'sqlite3'
 end
 
 group :test, :development do

@@ -80,6 +80,7 @@ GEM
     multi_json (1.7.2)
     nokogiri (1.5.9)
     oauth (0.4.7)
+    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -167,6 +168,7 @@ DEPENDENCIES
   friendly_id (~> 4.0.9)
   jquery-rails
   kaminari (~> 0.14.1)
+  pg
   rails (= 3.2.13)
   rspec-rails (~> 2.13.0)
   sanitize (~> 2.0.3)

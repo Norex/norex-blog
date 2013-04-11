@@ -16,11 +16,15 @@ end
 
 group :development do
   gem 'envious', '~> 0.3.0'
-  gem 'sqlite3'
 end
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.13.0'
   gem 'factory_girl_rails', '~> 4.2.1'
   gem 'capybara', '~> 2.0.3'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
 end

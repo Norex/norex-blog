@@ -1,0 +1,7 @@
+<div class="block authors">
+  <h2>Authors</h2>
+  <div class="divider dark">&nbsp;</div>
+  <ul id="author-list">
+    <%= render partial: 'users/user_sidebar', collection: User.all, :as => :user %>
+  </ul>
+</div>

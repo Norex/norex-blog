@@ -1,9 +1,6 @@
 class TumblesController < ApplicationController
   def index
-    @tumbles = Tumble.get_by_types(params).get_by_tags(params).order('date DESC')
-    require 'pp'
-    pp params
-    pp @tumbles
+    @tumbles = Tumble.get_by_types(params).get_by_tags(params).get_by_users(params).order('date DESC').page(params['page'] || 1).per(1)
 
     respond_to do |format|
       format.html
@@ -19,7 +16,13 @@ class TumblesController < ApplicationController
     @query = params[:query].downcase
 
     unless @query.blank?
-      @tumbles = Tumble.where('title LIKE ?', "%#{@query}%")
+      #@tumbles = Tumble.where('title LIKE ?', "%#{@query}%").get_by_types(params).get_by_tags(params).order('date DESC')
+      @tumbles = Tumble.where('title LIKE ?', "%#{@query}%").order('date DESC')
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 end

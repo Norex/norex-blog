@@ -1,0 +1,4 @@
+$('#post-loader').addClass('hidden');
+$("#posts").html("<%= j render('tumbles/tumbles') %>");
+$("#tags-block").replaceWith("<%= j render('shared/tags_block') %>");
+$("#types-list").html("<%= j render('shared/types_block_links', out: true) %>");

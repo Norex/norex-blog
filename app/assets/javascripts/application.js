@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.fitvids.min
 //= require_tree .
 //= require modernizr-2.6.2
+

@@ -31,3 +31,16 @@ $ ->
     $.getScript $(this).attr('href')
 
     false
+    
+  window.loading_pipes = false
+  if $('.pagination').length
+    $(window).scroll ->
+      url = $('.pagination .next a').attr('href')
+      if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50 && !window.loading_pipes
+          $('create-pipe-loader').removeClass('hide');
+          window.loading_pipes = true
+          $.getScript(url)
+    
+    $(window).scroll()
+    #if $(window).scrollTop() > $(document).height() - $(window).height() - 50
+      #alert('near bottom')

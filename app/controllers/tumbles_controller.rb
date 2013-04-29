@@ -17,7 +17,8 @@ class TumblesController < ApplicationController
 
     unless @query.blank?
       #@tumbles = Tumble.where('title LIKE ?', "%#{@query}%").get_by_types(params).get_by_tags(params).order('date DESC')
-      @tumbles = Tumble.where('title LIKE ?', "%#{@query}%").order('date DESC')
+      #@@tumbles = Tumble.where('title LIKE ?', "%#{@query}%").order('date DESC')
+      @tumbles = Tumble.find_with_index(@query)
     end
 
     respond_to do |format|

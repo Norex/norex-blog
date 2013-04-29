@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20130407013752) do
     t.text     "title"
     t.text     "content"
     t.datetime "date"
-    t.integer  "tumblr_id"
+    t.string   "tumblr_id"
     t.text     "url"
     t.string   "content_type"
     t.integer  "user_id"

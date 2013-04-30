@@ -2,14 +2,12 @@
   <div class="container">
     <div class="block" id="main-nav">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Norex</a></li>
-        <li><a href="#">Case Studies</a></li>
-        <li><a href="#">Our Team</a></li>
-        <li><a href="#" class="orange">Norex.ca</a></li>
-        <li><a href="#" class="twitter">@sitebynorex</a></li>
+        <li><%= link_to 'About', 'http://sitebynorex.com/about' %></li>
+        <li><%= link_to 'Work', 'http://sitebynorex.com/work' %></li>
+        <li><%= link_to 'Sitebynorex.com', 'http://sitebynorex.com/', class: 'orange' %></li>
+        <li><%= link_to '@sitebynorex', 'http://twitter.com/sitebynorex', class: 'twitter' %></li>
       </ul>
-      <a href="#main-nav" id="main-nav-btn" class="menu-icon"><span class="entypo menu">i</span></a>
+      <a href="#main-nav" id="main-nav-btn" class="menu-icon"><span class="entypo">&#9776;</span></a>
     </div>
     <div class="block center">
       <a href="/"><%= image_tag('logo.png', alt: 'The Society of Online Engineers') %></a>

@@ -1,7 +1,9 @@
 <%= render 'tumbles/tumbles' %>
-<article class="">
-  <nav class="pagination">
-    <span class="prev"><%= link_to_previous_page @tumbles, 'Previous' %></span>
-    <span class="next"><%= link_to_next_page @tumbles, 'Next' %></span>
-  </nav>
+<article class="pager-holder">
+	<section>
+		<ul class="pagination">
+			<li><%= link_to_previous_page @tumbles, raw('&laquo; Newer Posts') %></li>
+			<li><%= link_to_next_page @tumbles, raw('Older Posts &raquo;') %></li>
+		</ul>
+	</section>
 </article>

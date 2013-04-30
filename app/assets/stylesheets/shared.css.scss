@@ -426,6 +426,48 @@ ul.tags li a:hover span {
   background:#666;
 }
 
+
+ul.tags li {
+  position:relative;
+  display:block;
+  text-transform:uppercase;
+  color:#fff;
+  background:#333;
+  font-size:13px;
+  font-weight:700;
+  padding:3px 10px;
+  border-radius:2px;
+}
+
+ul.tags li span {
+  width:12px;
+  height:12px;
+  display:block;
+  float:left;
+  position:absolute;
+  left:-5px;
+  top:50%;
+  margin-top:-6px;
+  border-radius:30px;
+  background:#333;
+}
+
+ul.tags li span.end {
+  right:-5px!important;
+  left:auto;
+}
+
+ul.tags li span em {
+  display:block;
+  background:#fcfcfc;
+  border-radius:30px;
+  width:4px;
+  height:4px;
+  top:4px;
+  left:4px;
+  position:absolute;
+}
+
 /* ==========================================================================
 Sidebar
 ========================================================================== */

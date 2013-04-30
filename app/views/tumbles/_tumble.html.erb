@@ -3,7 +3,7 @@
   <section>
     <header>
       <h1><%= link_to strip_tags(tumble.title), tumble_path(tumble) %></h1>
-      <h6>by <a href="#"><%= tumble.user.blog_name %></a> | <%= format_date(tumble.date, '%B %d, %Y') %></h6>
+      <h6>by <%= tumble.user.blog_name %> | <%= format_date(tumble.date, '%B %d, %Y') %></h6>
     </header>
     <% if tumble.content_type == 'photo' %>
       <p><%= image_tag(YAML::load(tumble.content)[0]["original_size"].url) %>
@@ -12,7 +12,7 @@
     <% end %>
     <ul class="tags">
       <% tumble.tag_list.each do |tag| %>
-        <li><a href="<%= tag_path(tag) %>"><span class="start"><em>&nbsp;</em></span><%= tag %><span class="end"><em>&nbsp;</em></span></a></li>
+        <% <li><a href="<%= tag_path(tag) %>"><span class="start"><em>&nbsp;</em></span><%= tag %><span class="end"><em>&nbsp;</em></span></a></li> %>
       <% end %>
     </ul>
     <% if in_action(:show) %>

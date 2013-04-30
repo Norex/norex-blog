@@ -4,7 +4,7 @@ class CreateTumbles < ActiveRecord::Migration
       t.text :title
       t.text :content
       t.datetime :date
-      t.integer :tumblr_id
+      t.string :tumblr_id
       t.text :url
       t.string :content_type
       t.references :user

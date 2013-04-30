@@ -8,6 +8,8 @@ class Tumble < ActiveRecord::Base
   acts_as_taggable
   friendly_id :title, use: :slugged
 
+  acts_as_indexed :fields => [:title, :content]
+
   def self.get_by_tags(params)
     tags = params[:tags] || nil
 

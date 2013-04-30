@@ -22,8 +22,8 @@
       </ul>
       <%= render partial: 'users/user_full', object: tumble.user, as: :user %>
       <ul class="pagination">
-        <li><a href="#">« Previous Post</a></li>
-        <li><a href="#">Next Post »</a></li>
+        <li><% if @prev_tumble %><%= link_to raw('&laquo; Prev'), @prev_tumble %><% end %></li>
+        <li><% if @next_tumble %><%= link_to raw('Next &raquo;'), @next_tumble %><% end %></li>
       </ul>
     <% end %>
   </section>

@@ -12,7 +12,7 @@
     <% end %>
     <ul class="tags">
       <% tumble.tag_list.each do |tag| %>
-        <% <li><a href="<%= tag_path(tag) %>"><span class="start"><em>&nbsp;</em></span><%= tag %><span class="end"><em>&nbsp;</em></span></a></li> %>
+        <li><span class="start"><em>&nbsp;</em></span><%= tag %><span class="end"><em>&nbsp;</em></span></li>
       <% end %>
     </ul>
     <% if in_action(:show) %>

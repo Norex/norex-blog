@@ -12,11 +12,11 @@ Base styles: opinionated defaults
 
 @font-face {
 font-family: 'EntypoRegular';
-src: font-url('entypo-webfont.eot');
-src: font-url('entypo-webfont.eot?#iefix') format('embedded-opentype'),
-     font-url('entypo-webfont.woff') format('woff'),
-     font-url('entypo-webfont.ttf') format('truetype'),
-     font-url('entypo-webfont.svg#EntypoRegular') format('svg');
+src: font-url('entypo.eot');
+src: font-url('entypo.eot?#iefix') format('embedded-opentype'),
+     font-url('entypo.woff') format('woff'),
+     font-url('entypo.ttf') format('truetype'),
+     font-url('entypo.svg#EntypoRegular') format('svg');
 font-weight: normal;  
 font-style: normal;
 }
@@ -212,9 +212,11 @@ aside#main-content {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  position: relative;
   z-index: 2;
-  padding-bottom: 100%;
+  // position: relative;
+  // padding-bottom: 100%;
+  position: absolute;
+  display: inline-block;
 }
 
 aside.post-type-author a.avatar {
@@ -267,9 +269,9 @@ a.post-icon {
 }
 
 .post-icon span {
-  font-size: 32px;
+  font-size: 36px;
   color: #333;
-  line-height: 36px;
+  line-height: 1.25;
   margin-left: 2px;
   -webkit-transition: all 0.2s ease; 
   -moz-transition: all 0.2s ease;
@@ -283,15 +285,23 @@ a.post-icon {
 }
 
 article.video .post-icon span:before {
-  content: "q";
+  content: "\1F3AC";
 }
 
 article.text .post-icon span:before {
-  content: "&";
+  content: "\270E";
 }
 
 article.photo .post-icon span:before {
-  content: "D";
+  content: "\1F4F7";
+}
+
+article.link .post-icon span:before {
+  content: "\1F517";
+}
+
+article.quote .post-icon span:before {
+  content: "\E718";
 }
 
 a.post-icon:hover span {
@@ -492,7 +502,7 @@ a.menu-icon span {
   color: #fff;
   display: block;
   font-size: 42px;
-  line-height: 16px;
+  line-height: .75;
   margin-left: 5px;
 }
 
@@ -501,8 +511,8 @@ a.menu-icon:hover span {
 }
 
 div.block#main-nav {
-  margin:-166px 0 0 0!important;
-  height:179px;
+  margin:-130px 0 0 0!important;
+  height:144px;
   position:relative;
   -webkit-transition:all 0.3s ease; 
   -moz-transition:all 0.3s ease;
@@ -677,7 +687,7 @@ section#main-sidebar div.block {
   clear:left;
   float:left;
   width:100%;
-  margin:15px 0;
+  margin:9px 0;
 }
 
 div.block > h2 a {
@@ -1210,16 +1220,20 @@ ul.share li:first-child {
 }
 
 ul.share li:first-child a:before {
-  content: "5";
+  content: "\2661";
   display: block;
   float: left;
   font-family: 'EntypoRegular',Arial,Helvetica,sans-serif !important;
-  font-size: 21px;
-  margin-top: 5px;
+  font-size: 28px;
+  margin-top: 7px;
   padding-right: 3px;
 }
 
 /* Pagination */
+
+.pager-holder section {
+  margin-left: 200px;
+}
 
 ul.pagination {
   float:left;
@@ -1278,6 +1292,7 @@ section#author-vcard header {
 section#author-vcard h1 {
   float:left;
   font-size:30px;
+  padding-left: 20px;
 }
 
 section#author-vcard h3 {
@@ -1334,6 +1349,9 @@ blockquote {
   margin:20px;
   max-width:400px;
   font-weight:100;
+  p {
+    color: #fff;
+  }
 }
 
 .pink blockquote {
@@ -1669,6 +1687,10 @@ aside.post-type-author, ul.share li, div.block.types, div.block.categories, div.
   display:none;
 }
 
+.pager-holder section {
+  margin-left: 0;
+}
+
 section#main-sidebar {
   min-height:0!important;
   width:100%;
@@ -1685,6 +1707,8 @@ aside#main-content article, aside#main-content article section {
 
 aside#main-content {
   width:100%;
+  display: block;
+  position: relative;
   background:#fcfcfc!important;
 }
 

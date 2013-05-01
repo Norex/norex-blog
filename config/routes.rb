@@ -1,6 +1,7 @@
 NorexBlog::Application.routes.draw do
   get 'tags/:tag', to: 'tumbles#index', as: :tag
 
+  get 'posts/recent(.:format)', to: 'tumbles#recent', defaults: { format: 'json' }
   get 'posts/:id' => 'tumbles#show', :as => :tumble
   get 'search' => 'tumbles#search', :as => :search
 

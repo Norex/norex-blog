@@ -29,4 +29,14 @@ class TumblesController < ApplicationController
       format.js
     end
   end
+
+  def recent
+    tumble = Tumble.where('content_type != "photo"').order('date DESC').first
+    result = { title: tumble.title, content: tumble.content, url: tumble_url(tumble) }
+
+    respond_to do |format|
+      format.html { render json: result }
+      format.json { render json: result }
+    end
+  end
 end

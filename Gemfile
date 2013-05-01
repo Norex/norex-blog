@@ -9,6 +9,9 @@ gem 'sanitize', '~> 2.0.3'
 gem 'kaminari', '~> 0.14.1'
 gem 'acts_as_indexed', '~> 0.8.3'
 
+gem 'delayed_job_active_record', '~> 0.4.4'
+gem 'workless',  '~> 1.1.2'
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

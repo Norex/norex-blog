@@ -1,3 +1,4 @@
 <% content_for :title, @tumble.title %>
+<% content_for :description, strip_tags(@tumble.content) if (@tumble.content_type != 'photo') %>
 
 <%= render @tumble %>
